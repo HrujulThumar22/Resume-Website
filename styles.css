@@ -468,7 +468,6 @@ section .title::after {
 
 .skills .container {
   position: relative;
-  width: 1100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -891,7 +890,6 @@ section .title::after {
 
 .projects .project-content .project .container {
   position: relative;
-  width: 1000px;
   display: flex;
   justify-content: space-between;
   align-items: center;
