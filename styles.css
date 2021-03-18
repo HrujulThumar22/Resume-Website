@@ -8,7 +8,6 @@
 
 body {
   position: relative;
-  overflow-x: hidden;
 }
 html {
   scroll-behavior: smooth;
@@ -68,31 +67,6 @@ html {
   height: 100vh !important;
 }
 
-.section-padding {
-  padding: 100px 0;
-}
-
-.section-title {
-  position: relative;
-  text-align: center;
-  font-size: 40px;
-  font-weight: 500;
-  margin-bottom: 60px;
-  padding-bottom: 20px;
-  font-family: 'Ubuntu', sans-serif;
-  margin-bottom: 70px;
-  width: 100%;
-}
-
-.section-title h2 {
-  position: relative;
-  font-size: 36px;
-  text-transform: capitalize;
-  line-height: 1.14;
-  letter-spacing: 1.4px;
-  padding-bottom: 13px;
-}
-
 section .title::before {
   content: '';
   position: absolute;
@@ -130,7 +104,7 @@ footer {
 .about .about-content,
 .skills .skill-content,
 .contact .contact-content,
-.project .project-content{
+.project .project-content {
   display: flex;
   align-content: center;
   justify-content: space-between;
@@ -254,11 +228,9 @@ section .title::after {
     url(./images/op.png);
   background-attachment: fixed;
   background-position: center;
-  height: 100vh;
   width: 100%;
   background-size: 100%;
   color: #fff;
-  min-height: 500px;
   font-family: 'ubuntu', sans-serif;
   align-content: center;
   justify-content: space-between;
@@ -466,15 +438,6 @@ section .title::after {
   display: flex;
 }
 
-.skills .container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 30px;
-}
-
 .skills .title::before {
   background: #fff;
 }
@@ -485,7 +448,6 @@ section .title::after {
 
 .skills .card {
   position: relative;
-  height: 175px;
   background: #222;
   margin: 30px 10px;
   padding: 20px 15px;
@@ -497,7 +459,6 @@ section .title::after {
 
 .skills .card .card-content {
   display: flex;
-  margin-left: 30px;
 }
 
 .skills .card .card-content p {
@@ -513,7 +474,6 @@ section .title::after {
 
 .skills .card:hover {
   background: crimson;
-  height: 350px;
 }
 
 .skills .card .box {
@@ -583,6 +543,12 @@ section .title::after {
   opacity: 1;
   margin-top: -100px;
   transition-delay: 0.3s;
+}
+
+@media (max-width: 990px) {
+  .skills .card:hover .text {
+    margin-top: -150px;
+  }
 }
 
 .skills .bars {
@@ -781,11 +747,6 @@ section .title::after {
   box-shadow: inset 300px 0 50px rgba(255, 255, 255, 0.5);
 }
 
-.academic .container {
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
 .academic .card:hover {
   z-index: 999;
   box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5);
@@ -873,7 +834,7 @@ section .title::after {
   content: 'What i know';
 }
 
-.projects .project-content .project {
+.projects .project {
   position: relative;
   display: flex;
   justify-content: center;
@@ -881,25 +842,45 @@ section .title::after {
   min-height: 100vh;
 }
 
-.projects .project-content .project h2 {
+.projects .project h2 {
   margin-left: 100px;
   font-size: 3em;
   color: crimson;
   margin-bottom: 20px;
 }
 
-.projects .project-content .project .container {
+@media (max-width: 768px) {
+  .projects .project h2 {
+    font-size: 1.5rem;
+    margin-left: 0;
+  }
+
+  .card {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+.projects .project .container {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.projects .project-content .project:nth-child(even) .container {
+@media (max-width: 768px) {
+  .projects .project .container {
+    position: relative;
+    width: auto;
+    display: block;
+  }
+}
+
+.projects.project:nth-child(even) .container {
   flex-direction: row-reverse;
 }
 
-.projects .project-content .project .container .imgBox {
+.projects .project .container .imgBox {
   position: relative;
   width: 800px;
   height: 400px;
@@ -907,7 +888,14 @@ section .title::after {
   box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
 }
 
-.projects .project-content .project .container .imgBox img {
+@media (max-width: 768px) {
+  .projects .project .container .imgBox {
+    width: 400px;
+    height: 200px;
+  }
+}
+
+.projects .project .container .imgBox img {
   position: absolute;
   top: 0;
   left: 0;
@@ -916,7 +904,7 @@ section .title::after {
   object-fit: cover;
 }
 
-.projects .project-content .project .container .content {
+.projects .project .container .content {
   position: absolute;
   right: 0;
   margin-top: 200px;
@@ -930,8 +918,15 @@ section .title::after {
   border-bottom: 6px solid crimson;
 }
 
-.projects .project-content .project:nth-child(even) .container .content {
+.projects .project:nth-child(even) .container .content {
   left: 0;
+}
+
+@media (max-width: 768px) {
+  .projects .project .container .content {
+    position: relative;
+    margin-top: 0;
+  }
 }
 
 /* Contact Section Styling */
@@ -1089,69 +1084,6 @@ section .title::after {
   background: none;
 }
 
-.contact .php-email-form .validate {
-  display: none;
-  color: red;
-  margin: 0 0 15px 0;
-  font-weight: 400;
-  font-size: 13px;
-}
-
-.contact .php-email-form .error-message {
-  display: none;
-  color: #fff;
-  background: #ed3c0d;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .php-email-form .sent-message {
-  display: none;
-  color: #fff;
-  background: #18d26e;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.contact .php-email-form .loading {
-  display: none;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
-}
-
-.contact .php-email-form .loading:before {
-  content: '';
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
-  border-top-color: #eee;
-  -webkit-animation: animate-loading 1s linear infinite;
-  animation: animate-loading 1s linear infinite;
-}
-
-@-webkit-keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 /* footer section styling */
 .footer {
   background: #212121;
