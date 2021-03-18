@@ -228,6 +228,7 @@ section .title::after {
     url(./images/op.png);
   background-attachment: fixed;
   background-position: center;
+  height: 100vh;
   width: 100%;
   background-size: 100%;
   color: #fff;
