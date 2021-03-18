@@ -9,8 +9,11 @@
 body {
   position: relative;
 }
-html {
+html,
+body {
   scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
 }
 
 .mt-20 {
@@ -232,6 +235,7 @@ section .title::after {
   width: 100%;
   background-size: 100%;
   color: #fff;
+  min-height: 500px;
   font-family: 'ubuntu', sans-serif;
   align-content: center;
   justify-content: space-between;
@@ -896,6 +900,13 @@ section .title::after {
   }
 }
 
+@media (max-width: 400px) {
+  .projects .project .container .imgBox {
+    width: 200px;
+    height: 50px;
+  }
+}
+
 .projects .project .container .imgBox img {
   position: absolute;
   top: 0;
@@ -927,6 +938,12 @@ section .title::after {
   .projects .project .container .content {
     position: relative;
     margin-top: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .projects .project .container .content {
+    width: 200px;
   }
 }
 
